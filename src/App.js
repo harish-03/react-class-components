@@ -1,25 +1,41 @@
-import logo from './logo.svg';
+import { Component } from 'react';
 import './App.css';
+import State from './components/State';
+import Props from './components/Props';
+import Mount from './components/lifecycles/mount/Mount';
+import Update from './components/lifecycles/update/Update';
+import Unmount from './components/lifecycles/unmount/Unmount';
 
-function App() {
+
+
+class App extends Component {
+
+  constructor(props){
+    super(props);
+   this.state={
+    message: "props"
+   }
+  }
+
+  render(){
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
+      {/* <State />
+      <Props/> */}
+
+      {/* Lifecycles */}
+      <Mount/>
+      <Update/>
+      <Unmount/>
+      
+
       </header>
     </div>
   );
+}
 }
 
 export default App;
